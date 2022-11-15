@@ -10,6 +10,8 @@
 //array lista della spesa
 let arrayListaSpesa = ["uova" , "salsa Teriaki" , "spaghetti" , "hamburger" , "latte" , "tonno" , "cotolette" , "biscotti al cioccolato" , "gelato"];
 
+let container = document.querySelector(".list-group");
+
 //ciclo for
 console.log("---------------------------------------");
 console.log("Stampa lista spesa attraverso ciclo FOR");
@@ -27,7 +29,9 @@ let j = 0;
 while(j < arrayListaSpesa.length){
 
     console.log(arrayListaSpesa[j]);
-
+    container.innerHTML += '<li class="list-group-item">' + arrayListaSpesa[j] + '</li>';
     j++; //variabile contatrice per il ciclo while
 }
 console.log("---------------------------------------"); 
+
+
