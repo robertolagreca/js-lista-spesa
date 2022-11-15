@@ -4,10 +4,5 @@
     box-sizing: border-box;
 }
 
-.shopping-list{
-    margin:auto;
-    width:80%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
+
+
