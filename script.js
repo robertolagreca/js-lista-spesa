@@ -34,4 +34,27 @@ while(j < arrayListaSpesa.length){
 }
 console.log("---------------------------------------"); 
 
+let checkBtn, checkProduct;
 
+checkBtn = document.getElementById("btn-product");
+
+checkBtn.addEventListener('click', function() {
+
+    checkProduct = document.getElementById("product").value;
+
+    arrayListaSpesa.push(checkProduct);
+
+    console.log("Lista aggiornata");
+
+    j = 0;
+
+    while(j < arrayListaSpesa.length){
+        
+        console.log(arrayListaSpesa[j]);
+        
+        j++; //variabile contatrice per il ciclo while
+    } 
+
+    container.innerHTML += '<li class="list-group-item">' + arrayListaSpesa[arrayListaSpesa.length - 1] + '</li>';
+
+});
