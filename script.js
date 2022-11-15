@@ -11,7 +11,7 @@
 let arrayListaSpesa = ["uova" , "salsa Teriaki" , "spaghetti" , "hamburger" , "latte" , "tonno" , "cotolette" , "biscotti al cioccolato" , "gelato"];
 
 let container = document.querySelector(".list-group");
-//let btnCancel = document.getElementById("container-btn-cancel");
+let btnCancel = document.getElementById("container-btn-cancel");
 
 //ciclo for
 console.log("---------------------------------------");
@@ -31,11 +31,12 @@ let j = 0;
 while(j < arrayListaSpesa.length){
 
     console.log(arrayListaSpesa[j]);
-    container.innerHTML += '<li class="list-group-item">' + arrayListaSpesa[j] + '</li>';
+    container.innerHTML += '<li id="listItem-' + j + '" class="list-group-item col-12">' + arrayListaSpesa[j] + 
+    '<div class="text-end"><button type="button" id="btn-cancel" class="btn btn-danger text-end">Eliminare</button> </li>';
 
     //BONUS 2 aggiungere button per eliminare
     //btnCancel.innerHTML = '<div class="row border"> <div class="col-8 col-sm-6 border"> <button type="button" id="btn-cancel" class="btn btn-danger">Eliminare</button></div> </div>';
-    
+
     j++; //variabile contatrice per il ciclo while
 }
 console.log("---------------------------------------"); 
@@ -68,7 +69,20 @@ checkBtn.addEventListener('click', function() { //evento click su bottone
     } 
 
     //aggiungo il prodotto alla lista html
-    container.innerHTML += '<li class="list-group-item">' + arrayListaSpesa[arrayListaSpesa.length - 1] + '</li>';
+    container.innerHTML += '<li class="list-group-item" id="listItem-' + arrayListaSpesa.length - 1 + '">' 
+    + arrayListaSpesa[arrayListaSpesa.length - 1] + '</li>' + '<div class="text-end"><button type="button" id="btn-cancel" class="btn btn-danger text-end">Eliminare</button></li>';
 }
 
+});
+
+//BONUS 2
+let checkBtnDelete;
+checkBtnDelete = document.getElementById("btn-cancel");
+
+checkBtnDelete.addEventListener('click', function() { //evento click su bottone
+
+    checkProduct = document.getElementById("product").value;    //prendo valore input scritto
+
+//ciclo che si passa tutti i bottoni
+//ogni bottone assegna un event listener
 });
